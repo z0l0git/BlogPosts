@@ -1,6 +1,5 @@
-const [color, setColor] = useState("");
+import { useState } from "react";
 
-const menuData = ["Design", "Travel", "Fashion", "Technology", "Branding"];
 export const PostsHeader = () => {
   const [color, setColor] = useState("");
 
