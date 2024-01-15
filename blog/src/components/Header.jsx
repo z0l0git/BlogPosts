@@ -3,6 +3,7 @@ import { IoMdMenu } from "react-icons/io";
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Footer } from "@/components/Footer";
 
 export const Header = ({ children }) => {
   const [open, setOpen] = useState(false);
@@ -10,13 +11,19 @@ export const Header = ({ children }) => {
     setOpen(!open);
   };
   return (
-    <div className="flex flex-col items-center gap-[30px] md:gap-[100px] mx-auto max-w-screen-[1941px] px-[20px] md:px-[350px] my-[32px] font-work-sans  bg-white">
+    <div className="flex flex-col items-center gap-[30px] md:gap-[100px] w-full px-[10px] md:px-[50px] my-[32px] font-work-sans bg-white">
       <div className="hidden md:flex justify-between items-center w-[1216px] h-[100px] sticky top-0 z-10 bg-white">
         <Image src={"/hlogo.png"} width={158} height={36} alt={""} />
         <div className="flex justify-between text-[16px] font-[400] text-[#3B3C4A] gap-[40px] items-center">
-          <p className="">Home</p>
-          <p>Blog</p>
-          <p>Contact</p>
+          <p className="">
+            <a href="/">Home</a>
+          </p>
+          <p>
+            <a href="/blog">Blog</a>
+          </p>
+          <p>
+            <a href="/contact">Contact</a>
+          </p>
         </div>
         <div className="flex items-center w-[165px] bg-[#F4F4F5] p-[8px] gap-[12px] pl-[16px] ">
           <input
@@ -74,6 +81,7 @@ export const Header = ({ children }) => {
       </div>
 
       {children}
+      <Footer />
     </div>
   );
 };

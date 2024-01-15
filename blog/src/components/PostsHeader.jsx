@@ -5,10 +5,9 @@ export const PostsHeader = () => {
 
   const menuData = ["Design", "Travel", "Fashion", "Technology", "Branding"];
   return (
-    <div>
-      <h2 className="md:block hidden text-[24px] font-[700]">All Blog Posts</h2>
-      <div className="text-[#495057] font-[700] text-[20px] flex justify-between">
-        <div className="flex gap-[20px]">
+    <div className="w-[100%] md:block hidden">
+      <div className="text-[#495057] font-[700] text-[12px] md:text-[20px] flex justify-between">
+        <div className="flex gap-[15px] md:gap-[20px]">
           {menuData.map((item, index) => {
             return (
               <p

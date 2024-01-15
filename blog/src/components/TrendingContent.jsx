@@ -4,7 +4,7 @@ import { Badge } from "@/components/Badge";
 export const TrendingContent = (props) => {
   const { image, badge = "", title = "" } = props;
   return (
-    <div className="relative w-[289px] h-[320px] ">
+    <div className="relative w-[280px] h-[310px] ">
       <Image
         src={image}
         layout="fill"
