@@ -26,13 +26,25 @@ export const TrendingPage = () => {
       title:
         "The Impact of Technology on the Workplace: How Technology is Changing",
     },
+    {
+      image: "/mock1.jpeg",
+      badge: "Technology",
+      title:
+        "The Impact of Technology on the Workplace: How Technology is Changing",
+    },
+    {
+      image: "/mock1.jpeg",
+      badge: "Technology",
+      title:
+        "The Impact of Technology on the Workplace: How Technology is Changing",
+    },
   ];
   return (
-    <div className="flex flex-col items-center gap-[30px] w-full md:w-[1216px] overflow-x-scroll">
-      <h2 className="md:block hidden text-[24px] font-[700] w-[1216px] text-start">
+    <div className="flex flex-col items-start gap-[30px] w-full md:w-[1216px] mx-auto overflow-auto scrollhide">
+      <h2 className="text-[24px] font-[700] align-self-start w-full text-start sticky left-0">
         Trending
       </h2>
-      <div className="flex gap-[30px] w-fit">
+      <div className="flex gap-[30px] px-[20px] md:w-fit">
         {tredingData.map((item, index) => (
           <TrendingContent
             key={index}

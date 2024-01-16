@@ -9,3 +9,12 @@
 .sansText {
   font-family: var(--font-work-sans);
 }
+
+.scrollhide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollhide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

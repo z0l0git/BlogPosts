@@ -1,30 +1,22 @@
 import Image from "next/legacy/image";
 import { Badge } from "@/components/Badge";
 import { useState } from "react";
-import "flowbite";
+// import "flowbite";
 
 export const SliderContent = (props) => {
   const {
-    img,
+    img = "",
     btext = "",
     title = "",
     date = "",
     carosel = "data-carousel-item",
   } = props;
 
-  const getArticles = async () => {
-    const data = await fetch("https://dev.to/api/articles?username=gereltuyamz")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-    console.log(data);
-  };
-
   return (
     <div
       className={`w-full h-full top-0 absolute transition
       duration-[4000] ease-in-out
       rounded-[12px] z-1 overflow-hidden`}
-      onClick={getArticles}
       data-carousel-item={carosel}
     >
       <a>

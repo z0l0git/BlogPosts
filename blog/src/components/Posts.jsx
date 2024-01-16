@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 export const Posts = (props) => {
   const { image, btext = "Technology" } = props;
   return (
-    <div className="w-[392px] h-[476px] p-[16px] flex flex-col gap-[16px] cursor-pointer">
+    <div className="align-self w-[360px] h-[476px] p-[16px] flex flex-col gap-[16px] cursor-pointer">
       <div className="w-full h-[240px] relative">
         <Image
           src={image}
