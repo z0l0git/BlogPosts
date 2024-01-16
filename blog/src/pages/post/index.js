@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-[32px] alig-self-stretch">
+    <div className="flex flex-col gap-[32px] justify-center w-full md:w-[800px] sansText">
       <div className="flex flex-col gap-5">
         <h1 className="text-[36px] font-[700]">
           The Impact of Technology on the Workplace: How Technology is Changing
@@ -23,7 +23,7 @@ export default function Home() {
         height={500}
         className="rounded-[12px]"
       />
-      <p className="text-[20px] font-[400] text-[#3B3C4A]">
+      <p className="text-[20px] font-[400] text-[#3B3C4A] seriText">
         Traveling is an enriching experience that opens up new horizons, exposes
         us to different cultures, and creates memories that last a lifetime.
         However, traveling can also be stressful and overwhelming, especially if
@@ -39,7 +39,7 @@ export default function Home() {
         <h2 className="text-[24px] font-[600] mb-[16px]">
           Research Your Destination
         </h2>
-        <p className="text-[20px] font-[400] text-[#3B3C4A]">
+        <p className="text-[20px] font-[400] text-[#3B3C4A] seriText">
           Before embarking on your journey, take the time to research your
           destination. This includes understanding the local culture, customs,
           and laws, as well as identifying top attractions, restaurants, and
@@ -56,7 +56,7 @@ export default function Home() {
         <h2 className="text-[24px] font-[600] mb-[16px]">
           Plan Your Itinerary
         </h2>
-        <p className="text-[20px] font-[400] text-[#3B3C4A]">
+        <p className="text-[20px] font-[400] text-[#3B3C4A] seriText">
           While it's essential to leave room for spontaneity and unexpected
           adventures, having a rough itinerary can help you make the most of
           your time and budget. Identify the must-see sights and experiences and

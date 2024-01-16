@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.seriText {
+  font-family: var(--font-serif-pro);
+}
+
+.sansText {
+  font-family: var(--font-work-sans);
+}

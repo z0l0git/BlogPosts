@@ -4,14 +4,17 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <link
-        href="https://fonts.googleapis.com/css?family=Work Sans"
-        rel="stylesheet"
-      ></link>
-      <body className="font-work-sans">
+      <title>Blog</title>
+
+      <body>
         <Main />
         <NextScript />
       </body>
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+        rel="stylesheet"
+      />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     </Html>
   );
 }

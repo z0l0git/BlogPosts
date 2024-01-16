@@ -28,8 +28,10 @@ export const TrendingPage = () => {
     },
   ];
   return (
-    <div className="flex flex-col gap-[30px] w-full md:w-[1216px] overflow-x-scroll">
-      <h2 className="md:block hidden text-[24px] font-[700]">Trending</h2>
+    <div className="flex flex-col items-center gap-[30px] w-full md:w-[1216px] overflow-x-scroll">
+      <h2 className="md:block hidden text-[24px] font-[700] w-[1216px] text-start">
+        Trending
+      </h2>
       <div className="flex gap-[30px] w-fit">
         {tredingData.map((item, index) => (
           <TrendingContent

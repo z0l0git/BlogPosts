@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export const Posts = (props) => {
   const { image, btext = "Technology" } = props;
@@ -9,8 +9,7 @@ export const Posts = (props) => {
           src={image}
           alt="post"
           layout="fill"
-          objectFit="cover"
-          className="rounded-[6px]"
+          className="rounded-[6px] object-cover"
         />
       </div>
       <div className="flex flex-col gap-[16px]">

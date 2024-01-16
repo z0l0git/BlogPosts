@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Badge } from "@/components/Badge";
 
 export const TrendingContent = (props) => {

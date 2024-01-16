@@ -4,6 +4,7 @@ export const PostsHeader = () => {
   const [color, setColor] = useState("");
 
   const menuData = ["Design", "Travel", "Fashion", "Technology", "Branding"];
+
   return (
     <div className="w-[100%] md:block hidden">
       <div className="text-[#495057] font-[700] text-[12px] md:text-[20px] flex justify-between">
