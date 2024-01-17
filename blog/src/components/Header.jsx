@@ -57,9 +57,15 @@ export const Header = ({ children }) => {
               <div className="flex flex-col-reverse w-full gap-[20px] h-[300px] justify-end items-start p-[20px] bg-gray-50 rounded-[12px]">
                 <div className="flex flex-col w-full h-full justify-between">
                   <div className="flex flex-col gap-[15px]">
-                    <p className="">Home</p>
-                    <p>Blog</p>
-                    <p>Contact</p>
+                    <p className="">
+                      <a href="/">Home</a>
+                    </p>
+                    <p>
+                      <a href="/blog">Blog</a>
+                    </p>
+                    <p>
+                      <a href="/contact">Contact</a>
+                    </p>
                   </div>
                   <FaArrowRightLong
                     size={30}

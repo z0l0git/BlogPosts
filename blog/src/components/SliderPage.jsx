@@ -1,22 +1,26 @@
 import { SliderContent } from "@/components/SliderContent";
 import { useState, useEffect } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-// import "flowbite";
+import axios from "axios";
 
 export const SliderPage = (props) => {
   const [data, setData] = useState([]);
   const [click, setClick] = useState(false);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    getArticles();
-    console.log("data Items =", data);
-  }, [click]);
-
-  const getArticles = async () => {
-    await fetch("https://dev.to/api/articles?username=gereltuyamz")
-      .then((response) => response.json())
-      .then((data) => setData(data), console.log(data));
-  };
+    const url = "https://dev.to/api/articles?top=1&per_page=10";
+    axios
+      .get(url)
+      .then((res) => {
+        setData(res.data);
+        setLoader(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoader(false);
+      });
+  }, []);
 
   // const mockData = props.data;
 
@@ -41,41 +45,37 @@ export const SliderPage = (props) => {
       readable_publish_date: "August 20, 2022",
     },
   ];
+  const str = "<p>kajshdksjhd</p>";
+  console.log(str.replace(/<\/?[^>]+(>|$)/g, ""));
 
   return (
-    <div
-      id="animation-carousel"
-      data-carousel="static"
-      className="hidden md:flex w-[100%] md:align-self relative flex-col items-center gap-[11px]"
-    >
+    <div className="hidden md:flex w-[100%] md:align-self relative flex-col items-center gap-[11px]">
       <div
-        className="max-w-[1216px] w-[100%] h-[600px] relative flex flex-col overflow-hidden scrollhide"
+        className="max-w-[1216px] w-full h-[600px]  flex overflow-scroll scrollhide"
         onClick={() => {
           setClick(!click);
         }}
       >
-        {mockData.map((item, index) => (
-          <SliderContent
-            key={index}
-            id={`slide${index}`}
-            img={item.cover_image}
-            btext={item.tags}
-            title={item.title}
-            date={item.readable_publish_date}
-          />
-        ))}
+        {loader && <div className="w-full bg-black">Loading...</div>}
+        {data &&
+          data?.map((item, index) => {
+            return (
+              <SliderContent
+                key={index}
+                id={`slide${index}`}
+                img={item.cover_image ?? ""}
+                btext={item.tags}
+                title={item.title}
+                date={item.readable_publish_date}
+              />
+            );
+          })}
       </div>
       <div className="flex gap-[9px] w-[63%] justify-end">
-        <button
-          className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer"
-          data-carousel-prev
-        >
+        <button className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer">
           <IoIosArrowBack color="gray" size={20} />
         </button>
-        <button
-          className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer"
-          data-carousel-next
-        >
+        <button className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer">
           <IoIosArrowForward color="gray" size={20} />
         </button>
       </div>

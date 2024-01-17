@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "^14.0.4",
+    "axios": "^1.6.5",
     "carousel": "^0.0.3",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.2",
@@ -21,7 +22,8 @@
     "react-dom": "^18.2.0",
     "react-elastic-carousel": "^0.11.5",
     "react-icons": "^5.0.1",
-    "responsive-carousel": "^1.5.8"
+    "responsive-carousel": "^1.5.8",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
