@@ -5,7 +5,6 @@ import axios from "axios";
 
 export const SliderPage = (props) => {
   const [data, setData] = useState([]);
-  const [click, setClick] = useState(false);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -45,17 +44,12 @@ export const SliderPage = (props) => {
       readable_publish_date: "August 20, 2022",
     },
   ];
-  const str = "<p>kajshdksjhd</p>";
-  console.log(str.replace(/<\/?[^>]+(>|$)/g, ""));
+  // const str = "<p>kajshdksjhd</p>";
+  // console.log(str.replace(/<\/?[^>]+(>|$)/g, ""));
 
   return (
     <div className="hidden md:flex w-[100%] md:align-self relative flex-col items-center gap-[11px]">
-      <div
-        className="max-w-[1216px] w-full h-[600px]  flex overflow-scroll scrollhide"
-        onClick={() => {
-          setClick(!click);
-        }}
-      >
+      <div className="max-w-[1216px] w-full h-[600px] rounded-[12px] flex overflow-x-scroll scrollhide">
         {loader && <div className="w-full bg-black">Loading...</div>}
         {data &&
           data?.map((item, index) => {
@@ -64,9 +58,10 @@ export const SliderPage = (props) => {
                 key={index}
                 id={`slide${index}`}
                 img={item.cover_image ?? ""}
-                btext={item.tags}
+                btext={item.tag_list[0]}
                 title={item.title}
                 date={item.readable_publish_date}
+                articleID={item.id}
               />
             );
           })}

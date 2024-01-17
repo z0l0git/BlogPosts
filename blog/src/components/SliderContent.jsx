@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { Badge } from "@/components/Badge";
-import { useState } from "react";
+import { useRouter } from "next/router";
 
 export const SliderContent = (props) => {
-  const { img = "", btext = "", title = "", date = "" } = props;
+  const { img = "", btext = "", title = "", date = "", articleID = "" } = props;
+  const router = useRouter();
   return (
     <div
       className={`w-full h-full top-0 relative transition
       duration-[4000] ease-in-out shrink-0
-      rounded-[12px] z-1 overflow-hidden`}
+      rounded-[12px] z-1 overflow-hidden cursor-pointer hover:scale-105`}
+      onClick={() => router.push(`/blog/${articleID}`)}
     >
       <Image
         src={img}

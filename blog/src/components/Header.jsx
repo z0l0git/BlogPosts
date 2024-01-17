@@ -14,7 +14,9 @@ export const Header = ({ children }) => {
   return (
     <div className="flex flex-col items-center gap-[30px] md:gap-[100px] w-full px-[10px] md:px-[50px] my-[32px] font-work-sans bg-white">
       <div className="hidden md:flex justify-between items-center align-middle w-full h-[100px] sticky top-0 z-10 bg-white">
-        <Image src={"/hlogo.png"} width={158} height={36} alt={""} />
+        <a href="/">
+          <Image src={"/hlogo.png"} width={158} height={36} alt={""} />
+        </a>
         <div className="flex justify-between text-[16px] font-[400] text-[#3B3C4A] gap-[40px] items-center">
           <p className="">
             <a href="/">Home</a>
