@@ -1,0 +1,5 @@
+Make Search
+1. search articles by slug.
+2. Make SliderPage, TrendingPage disappear when search inputed.
+3. Replace PostsPage data with searched items
+
