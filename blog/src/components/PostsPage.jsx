@@ -7,10 +7,10 @@ export const PostsPage = (props) => {
   const { homeCheck = true } = props;
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const [page, setPage] = useState(9);
+  const [page, setPage] = useState(homeCheck ? 9 : 30);
 
   const clickHandler = () => {
-    setPage(page + 3);
+    setPage(page + 4);
   };
 
   useEffect(() => {

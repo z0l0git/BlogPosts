@@ -6,6 +6,7 @@ import axios from "axios";
 export const SliderPage = (props) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const url = "https://dev.to/api/articles?top=1&per_page=10";
@@ -20,8 +21,21 @@ export const SliderPage = (props) => {
         setLoader(false);
       });
   }, []);
+  const handleIncrement = () => {
+    if (count === 9) {
+      setCount(0);
+    } else {
+      setCount((prev) => prev + 1);
+    }
+  };
 
-  // const mockData = props.data;
+  const handleDecrement = () => {
+    if (count === 0) {
+      setCount(9);
+    } else {
+      setCount((prev) => prev - 1);
+    }
+  };
 
   const mockData = [
     {
@@ -48,10 +62,39 @@ export const SliderPage = (props) => {
   // console.log(str.replace(/<\/?[^>]+(>|$)/g, ""));
 
   return (
-    <div className="hidden md:flex w-[100%] md:align-self relative flex-col items-center gap-[11px]">
-      <div className="max-w-[1216px] w-full h-[600px] rounded-[12px] flex overflow-x-scroll scrollhide">
-        {loader && <div className="w-full bg-black">Loading...</div>}
-        {data &&
+    <div className="hidden md:flex w-[100%] md:align-self flex-col items-center gap-[11px]">
+      <div
+        className="max-w-[1216px] w-full h-[600px] rounded-[12px] flex overflow-x-scroll scrollhide transition
+      duration-500 ease-in-out"
+      >
+        {loader ? (
+          <div className="w-full bg-black">Loading...</div>
+        ) : (
+          <SliderContent
+            img={data[count].cover_image ?? ""}
+            btext={data[count].tag_list[0]}
+            title={data[count].title}
+            date={data[count].readable_publish_date}
+            articleID={data[count].id}
+          />
+        )}
+
+        {/* {data &&
+          data?.map((item, index) => {
+            return (
+              <SliderContent
+                key={index}
+                id={`slide${index}`}
+                img={data[index].cover_image ?? ""}
+                btext={data[index].tag_list[0]}
+                title={data[index].title}
+                date={data[index].readable_publish_date}
+                articleID={data[index].id}
+              />
+            );
+          })} */}
+
+        {/* {data &&
           data?.map((item, index) => {
             return (
               <SliderContent
@@ -64,13 +107,19 @@ export const SliderPage = (props) => {
                 articleID={item.id}
               />
             );
-          })}
+          })} */}
       </div>
-      <div className="flex gap-[9px] w-[63%] justify-end">
-        <button className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer">
+      <div className="flex gap-[9px] max-w-[1216px] w-full justify-end">
+        <button
+          className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer"
+          onClick={handleDecrement}
+        >
           <IoIosArrowBack color="gray" size={20} />
         </button>
-        <button className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer">
+        <button
+          className="p-[10px] border-2 border-gray rounded-[6px] cursor-pointer"
+          onClick={handleIncrement}
+        >
           <IoIosArrowForward color="gray" size={20} />
         </button>
       </div>
